@@ -1,48 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<population_size>15</population_size>
-
-<preserved_high_position>2</preserved_high_position>
-<preserved_low_position>1</preserved_low_position>
-<T>0.5</T>
-<crossing_volume>4</crossing_volume>
-<mutation_volume>2</mutation_volume>
-
 
 <processor>
-    <max_load>15</max_load>
+    <max_load>50</max_load>
 </processor>
 
 <processor>
-    <max_load>15</max_load>
+    <max_load>70</max_load>
 </processor>
 
 <processor>
-    <max_load>15</max_load>
+    <max_load>50</max_load>
 </processor>
-
-<processor>
-    <max_load>15</max_load>
-</processor>
-
-
-
-
 
 <process>
-    <load>5</load>
+    <load>20</load>
 </process>
 
 <process>
-    <load>5</load>
-</process>
-
-<process>
-    <load>5</load>
-</process>
-
-<process>
-    <load>5</load>
+    <load>10</load>
 </process>
 
 <process>
@@ -54,3 +30,18 @@
     <second>1</second>
     <load>15</load>
 </connection>
+
+<connection>
+    <first>0</first>
+    <second>2</second>
+    <load>15</load>
+</connection>
+
+<connection>
+    <first>1</first>
+    <second>2</second>
+    <load>15</load>
+</connection>
+
+
+

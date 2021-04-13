@@ -4,8 +4,7 @@
 
 enum { base_10 = 10 };
 
-Population::Population(){
-    std::cerr << "blessRNG\n";
+Population::Population() {  // NOLINT
     rng.seed(time(nullptr));
 }
 
@@ -41,6 +40,7 @@ auto Population::generate_from_xml(tinyxml2::XMLDocument &doc) -> void {
         proxy = strtol(maxload->GetText(), nullptr, base_10);
 
         affils.emplace_back(std::make_pair(from, to), proxy);
+        affils.emplace_back(std::make_pair(to, from), proxy);
 
         txtnode = txtnode->NextSiblingElement("connection");
     }
@@ -48,25 +48,28 @@ auto Population::generate_from_xml(tinyxml2::XMLDocument &doc) -> void {
 
 auto Population::generate_random_entity() -> entity {
     entity new_ent;
-    std::vector<int16_t> vacant_power(max_loads);
-    std::vector<int16_t> valid_iterators;
-    // std::cerr << "new entity, MOTHERFUCKER" << std::endl;
     for (auto i = 0; i < progs.size(); ++i) {
-        // std::cerr << "fucking with " << progs[i] << " at " << i << std::endl;
-        for (auto j = 0; j < vacant_power.size(); ++j) {
-            // std::cerr << "\tsucking with " << vacant_power[j] << " at " << j
-            //           << std::endl;
-            if (progs[i] < vacant_power[j]) {
-                valid_iterators.emplace_back(j);
-            }
-        }
-        std::uniform_int_distribution<> dst(0, valid_iterators.size() - 1);
-        auto place = dst(rng);
-        new_ent[i] = valid_iterators[place];
-        vacant_power[place] -= progs[i];
-        valid_iterators.clear();
+        std::uniform_int_distribution<> dst(0, max_loads.size() - 1);
+        new_ent[i] = dst(rng);
     }
     return new_ent;
+}
+
+auto Population::check_if_fits(entity ent) -> bool {
+    std::vector<int16_t> vacant_power(max_loads);
+    for (auto i = 0; i < progs.size(); ++i) {
+        vacant_power[ent[i]] -= progs[i];
+    }
+    for (auto x : vacant_power) {
+        if (x < 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+auto Population::get_affils() -> std::vector<std::pair<affiliation, int16_t>>{
+    return affils;
 }
 
 auto Population::print_vals() -> void {
@@ -85,12 +88,12 @@ auto Population::print_vals() -> void {
 
 // auto Population::get_fittest() { return cur_fittest; }
 
-auto Population::calculate_target_fuction(const entity &ent) -> size_t{
+auto Population::calculate_target_fuction(const entity &ent) -> size_t {
     size_t res = 0;
     for (auto x : affils) {
         if (ent.at(x.first.first) != ent.at(x.first.second)) {
             res += x.second;
         }
     }
-    return res;
+    return res/2;
 }
