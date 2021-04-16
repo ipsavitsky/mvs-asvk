@@ -5,7 +5,7 @@
 
 int main() {
     tinyxml2::XMLDocument doc;
-    doc.LoadFile("killme.xml");
+    doc.LoadFile("config.xml");
     Population popl;
     popl.generate_from_xml(doc);
     // popl.print_vals();
@@ -19,7 +19,7 @@ int main() {
     auto valueless_iters = 0;
     auto value_iters = 0;
     auto ever_changed = false;
-    while (valueless_iters < 1000 || cur_fit != 0) {  // NOLINT
+    while (valueless_iters < 1000 && cur_fit != 0) {  // NOLINT
         // std::cerr << valueless_iters << std::endl;
         auto new_ent = popl.generate_random_entity();
         auto new_fit = popl.calculate_target_fuction(new_ent);

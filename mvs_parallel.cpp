@@ -20,7 +20,7 @@ void fit_entity() {
     auto valueless_iters = 0;
     auto value_iters = 0;
     auto ever_changed = false;
-    while (valueless_iters < 1000 || cur_fit != 0) {  // NOLINT
+    while (valueless_iters < 1000 && cur_fit != 0) {  // NOLINT
         auto new_ent = popl.generate_random_entity();
         auto new_fit = popl.calculate_target_fuction(new_ent);
         std::unique_lock<std::mutex> lock(ent_mutex);
@@ -45,7 +45,7 @@ void fit_entity() {
 
 int main() {
     tinyxml2::XMLDocument doc;
-    doc.LoadFile("killme.xml");
+    doc.LoadFile("config.xml");
     popl.generate_from_xml(doc);
 
     for (auto x : popl.get_affils()) {
@@ -54,7 +54,7 @@ int main() {
 
     std::vector<std::thread> threads;
 
-    const auto num_threads = 15U;
+    const auto num_threads = 16U;
 
     for (auto it = 0U; it != num_threads; ++it) {
         threads.emplace_back(fit_entity);
@@ -62,20 +62,6 @@ int main() {
     for (auto it = 0U; it != num_threads; ++it) {
         threads[it].join();
     }
-
-    std::cout << "my ass: " << k << std::endl;
-    for (auto x : func_results) {
-        std::cout << x.first << "\t" << x.second.first << "\t"
-                  << x.second.second << std::endl;
-    }
-
-    // using wtf = std::pair<std::thread::id, std::pair<bool, int>>;
-    // std::vector<wtf> proxy(func_results.begin(), func_results.end());
-    // auto compare_changeness = [](wtf a, wtf b){
-    //     return a.second.first || b.second.first;
-    // };
-    // auto ever_changed = std::accumulate(proxy.begin(), proxy.end(), false,
-    // compare_changeness);
 
     auto ever_changed = false;
     auto iter_sum = 0UL;

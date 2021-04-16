@@ -10,7 +10,6 @@ Population::Population() {  // NOLINT
 
 auto Population::generate_from_xml(tinyxml2::XMLDocument &doc) -> void {
     tinyxml2::XMLElement *txtnode = doc.FirstChildElement("processor");
-    std::stringstream convert_stream;
     int16_t proxy = 0;
     int16_t from = 0;
     int16_t to = 0;
