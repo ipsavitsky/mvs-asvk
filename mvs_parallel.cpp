@@ -54,7 +54,7 @@ int main() {
 
     std::vector<std::thread> threads;
 
-    const auto num_threads = 16U;
+    const auto num_threads = 64U;
 
     for (auto it = 0U; it != num_threads; ++it) {
         threads.emplace_back(fit_entity);
