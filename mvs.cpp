@@ -1,12 +1,16 @@
 #include <iostream>
 
-#include "genetic.hpp"
+#include "entity.hpp"
 #include "tinyxml2.h"
 
-int main() {
+int main(int argc, char *argv[]) {
+    if(argc != 2){
+        std::cerr << "incorrect number of arguments" << std::endl;
+        exit(0);
+    }
     tinyxml2::XMLDocument doc;
-    doc.LoadFile("config.xml");
-    Population popl;
+    doc.LoadFile(argv[1]);
+    entity_generator popl;
     popl.generate_from_xml(doc);
     // popl.print_vals();
 
@@ -42,7 +46,7 @@ int main() {
         std::for_each(cur_best.begin(), cur_best.end(), [](auto &n) {
             std::cout << n.first << "\t" << n.second << std::endl;
         });
-        std::cout << "fitness: " << cur_fit;
+        std::cout << "fitness: " << cur_fit << std::endl;
     }
     else{
         std::cout << "failure" << std::endl;

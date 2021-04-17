@@ -9,20 +9,25 @@
 int main() {
     tinyxml2::XMLDocument out_doc;
     std::default_random_engine rng(time(nullptr));
-    auto numProgs = 16U;
+    auto numProgs = 4U;
     const std::vector<int> proc_loads{50, 70, 90, 100};
+    auto sum = 0UL;
     for (auto i = 0U; i < numProgs; ++i) {
         std::uniform_int_distribution<> dst(0, proc_loads.size() - 1);
         auto *processes_element = out_doc.NewElement("processor");
         auto *load_element =
             processes_element->InsertNewChildElement("max_load");
-        load_element->SetText(proc_loads[dst(rng)]);
+        auto k = proc_loads[dst(rng)];
+        load_element->SetText(k);
+        sum += k;
         out_doc.InsertEndChild(processes_element);
     }
+    std::cout << "average load/processor = " << sum / numProgs << std::endl;
 
     auto numProcs = numProgs * 8;
-    auto sum = 0UL;
+    sum = 0UL;
     const std::vector<int> prog_loads{5, 10, 15, 20};
+    // const std::vector<int> prog_loads{5, 10, 15};
     for (auto i = 0U; i < numProcs; ++i) {
         std::uniform_int_distribution<> dst(0, prog_loads.size() - 1);
         auto *processes_element = out_doc.NewElement("process");
@@ -33,7 +38,7 @@ int main() {
         out_doc.InsertEndChild(processes_element);
     }
 
-    std::cout << "sum/numProgs = " << sum / numProgs << std::endl;
+    std::cout << "generated load/processor = " << sum / numProgs << std::endl;
 
     // auto numCons = numProcs * 2;
 

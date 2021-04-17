@@ -11,7 +11,7 @@
 using affiliation = std::pair<int16_t, int16_t>;
 using entity = std::unordered_map<int16_t, int16_t>;
 
-class Population {
+class entity_generator {
    private:
     std::vector<int16_t> max_loads;
     std::vector<int16_t> progs;
@@ -19,7 +19,7 @@ class Population {
     std::default_random_engine rng;
 
    public:
-    Population();
+    entity_generator();
     auto generate_random_entity() -> entity;
     auto generate_from_xml(tinyxml2::XMLDocument &doc) -> void;
     auto print_vals() -> void;

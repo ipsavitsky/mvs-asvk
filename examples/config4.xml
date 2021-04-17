@@ -1,0 +1,611 @@
+<processor>
+    <max_load>70</max_load>
+</processor>
+
+<processor>
+    <max_load>90</max_load>
+</processor>
+
+<processor>
+    <max_load>100</max_load>
+</processor>
+
+<processor>
+    <max_load>100</max_load>
+</processor>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>20</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>20</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>10</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>5</load>
+</process>
+
+<process>
+    <load>15</load>
+</process>
+
+<connection>
+    <first>0</first>
+    <second>6</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>0</first>
+    <second>23</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>0</first>
+    <second>12</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>1</first>
+    <second>10</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>1</first>
+    <second>18</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>1</first>
+    <second>7</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>2</first>
+    <second>19</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>2</first>
+    <second>1</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>3</first>
+    <second>0</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>3</first>
+    <second>23</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>4</first>
+    <second>4</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>4</first>
+    <second>0</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>5</first>
+    <second>25</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>5</first>
+    <second>29</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>5</first>
+    <second>22</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>6</first>
+    <second>25</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>6</first>
+    <second>9</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>7</first>
+    <second>13</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>7</first>
+    <second>20</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>7</first>
+    <second>9</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>8</first>
+    <second>18</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>8</first>
+    <second>4</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>9</first>
+    <second>2</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>9</first>
+    <second>1</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>10</first>
+    <second>10</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>10</first>
+    <second>9</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>10</first>
+    <second>12</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>11</first>
+    <second>30</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>11</first>
+    <second>28</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>11</first>
+    <second>5</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>12</first>
+    <second>20</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>12</first>
+    <second>22</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>13</first>
+    <second>20</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>13</first>
+    <second>6</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>14</first>
+    <second>2</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>14</first>
+    <second>17</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>15</first>
+    <second>6</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>15</first>
+    <second>17</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>16</first>
+    <second>23</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>16</first>
+    <second>26</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>17</first>
+    <second>14</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>17</first>
+    <second>31</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>17</first>
+    <second>28</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>18</first>
+    <second>29</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>18</first>
+    <second>1</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>18</first>
+    <second>14</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>19</first>
+    <second>27</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>19</first>
+    <second>28</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>19</first>
+    <second>24</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>20</first>
+    <second>11</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>20</first>
+    <second>16</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>21</first>
+    <second>24</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>21</first>
+    <second>5</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>21</first>
+    <second>18</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>22</first>
+    <second>4</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>22</first>
+    <second>0</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>23</first>
+    <second>5</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>23</first>
+    <second>8</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>24</first>
+    <second>4</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>24</first>
+    <second>0</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>24</first>
+    <second>26</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>25</first>
+    <second>30</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>25</first>
+    <second>7</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>26</first>
+    <second>3</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>26</first>
+    <second>5</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>26</first>
+    <second>6</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>27</first>
+    <second>28</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>27</first>
+    <second>16</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>28</first>
+    <second>9</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>28</first>
+    <second>1</second>
+    <load>100</load>
+</connection>
+
+<connection>
+    <first>28</first>
+    <second>13</second>
+    <load>50</load>
+</connection>
+
+<connection>
+    <first>29</first>
+    <second>1</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>29</first>
+    <second>10</second>
+    <load>10</load>
+</connection>
+
+<connection>
+    <first>30</first>
+    <second>3</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>30</first>
+    <second>13</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>31</first>
+    <second>7</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>31</first>
+    <second>19</second>
+    <load>70</load>
+</connection>
+
+<connection>
+    <first>31</first>
+    <second>21</second>
+    <load>70</load>
+</connection>

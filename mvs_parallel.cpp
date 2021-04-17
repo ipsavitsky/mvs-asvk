@@ -4,14 +4,14 @@
 #include <map>
 #include <thread>
 
-#include "genetic.hpp"
+#include "entity.hpp"
 // #include "threadpool.hpp"
 #include "tinyxml2.h"
 
 size_t cur_fit;
 entity cur_best;
 std::mutex ent_mutex;
-Population popl;
+entity_generator popl;
 int k = 0;
 
 std::map<std::thread::id, std::pair<bool, int>> func_results;
@@ -43,9 +43,13 @@ void fit_entity() {
     // return std::make_pair(ever_changed, value_iters + valueless_iters);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+    if(argc != 2){
+        std::cerr << "incorrect number of arguments" << std::endl;
+        exit(0);
+    }
     tinyxml2::XMLDocument doc;
-    doc.LoadFile("config.xml");
+    doc.LoadFile(argv[1]);
     popl.generate_from_xml(doc);
 
     for (auto x : popl.get_affils()) {
@@ -54,7 +58,7 @@ int main() {
 
     std::vector<std::thread> threads;
 
-    const auto num_threads = 64U;
+    const auto num_threads = 16U;
 
     for (auto it = 0U; it != num_threads; ++it) {
         threads.emplace_back(fit_entity);
